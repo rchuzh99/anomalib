@@ -1,0 +1,63 @@
+model:
+  class_path: anomalib.models.Patchcore
+  init_args:
+    backbone: wide_resnet50_2
+    layers:
+      - layer2
+      - layer3
+    pre_trained: true
+    coreset_sampling_ratio: 0.1
+    num_neighbors: 9
+data:
+  class_path: anomalib.data.Folder
+  init_args:
+    root: "/home/jovyan/dataset/Model_Accuracy/Original/Public/Anomaly/screw"
+    name: screw
+    mask_dir: "ground_truth"
+    normal_dir: train/good
+    abnormal_dir:
+      [
+        val/scratch_neck,
+        val/scratch_head,
+        val/manipulated_front,
+        val/thread_top,
+        val/thread_side,
+      ]
+    normal_test_dir: val/good
+    normal_split_ratio: 0
+    test_split_mode: from_dir
+    test_split_ratio: 0.000000001
+    # test_split_mode: none
+    val_split_mode: from_test
+    val_split_ratio: 0.999999999999
+    task: segmentation
+    extensions: [".png"]
+    # test_split_mode: none
+    # test_split_ratio: 0.2
+    # val_split_mode: same_as_test
+    # val_split_ratio: 0.5
+    image_size: [224, 224]
+    train_batch_size: 32
+    eval_batch_size: 32
+    num_workers: 8
+
+metrics:
+  image:
+    - F1Score
+    - AUROC
+  pixel:
+    - F1Score
+    - AUROC
+  threshold:
+    class_path: anomalib.metrics.F1AdaptiveThreshold
+    init_args:
+      default_value: 0.5
+trainer:
+  logger:
+    class_path: lightning.pytorch.loggers.wandb.WandbLogger
+    init_args:
+      save_dir: "."
+      name: screw
+      project: model_accuracy_Anomaly
+
+task: SEGMENTATION

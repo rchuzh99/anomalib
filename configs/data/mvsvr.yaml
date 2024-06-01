@@ -1,0 +1,10 @@
+class_path: anomalib.data.Folder
+init_args:
+  format: folder
+  abnormal_dir: val/bad
+  abnormal_test_dir: val/bad
+  normal_dir: train/good
+  normal_test_dir: val/good
+  root: /home/jovyan/dataset/Model_Accuracy/Original/MVSVR_ROTATE
+  task: classification
+  extensions: [".png"]
