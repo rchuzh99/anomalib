@@ -19,6 +19,7 @@
 [![Documentation Status](https://readthedocs.org/projects/anomalib/badge/?version=latest)](https://anomalib.readthedocs.io/en/latest/?badge=latest)
 [![codecov](https://codecov.io/gh/openvinotoolkit/anomalib/branch/main/graph/badge.svg?token=Z6A07N1BZK)](https://codecov.io/gh/openvinotoolkit/anomalib)
 [![Downloads](https://static.pepy.tech/personalized-badge/anomalib?period=total&units=international_system&left_color=grey&right_color=green&left_text=PyPI%20Downloads)](https://pepy.tech/project/anomalib)
+[![Discord](https://img.shields.io/discord/1230798452577800237?style=plastic)](https://discord.com/channels/1230798452577800237)
 
 </div>
 
@@ -37,7 +38,7 @@ Anomalib is a deep learning library that aims to collect state-of-the-art anomal
 - Simple and modular API and CLI for training, inference, benchmarking, and hyperparameter optimization.
 - The largest public collection of ready-to-use deep learning anomaly detection algorithms and benchmark datasets.
 - [**Lightning**](https://www.lightning.ai/) based model implementations to reduce boilerplate code and limit the implementation efforts to the bare essentials.
-- All models can be exported to [**OpenVINO**](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html) Intermediate Representation (IR) for accelerated inference on intel hardware.
+- The majority of models can be exported to [**OpenVINO**](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html) Intermediate Representation (IR) for accelerated inference on Intel hardware.
 - A set of [inference tools](tools) for quick and easy deployment of the standard or custom anomaly detection models.
 
 # 📦 Installation
@@ -52,7 +53,7 @@ Installing the library with pip is the easiest way to get started with anomalib.
 pip install anomalib
 ```
 
-This will install Anomalib CLI using the [installer](requirements/installer.txt) dependencies. Anomalib CLI is a command line interface for training, inference, benchmarking, and hyperparameter optimization. If you want to use the library as a Python package, you can install the library with the following command:
+This will install Anomalib CLI using the [dependencies](/pyproject.toml) in the `pyproject.toml` file. Anomalib CLI is a command line interface for training, inference, benchmarking, and hyperparameter optimization. If you want to use the library as a Python package, you can install the library with the following command:
 
 ```bash
 # Get help for the installation arguments
@@ -92,7 +93,7 @@ cd anomalib
 pip install -e .
 ```
 
-This will install Anomalib CLI using the [installer](requirements/installer.txt) dependencies. Anomalib CLI is a command line interface for training, inference, benchmarking, and hyperparameter optimization. If you want to use the library as a Python package, you can install the library with the following command:
+This will install Anomalib CLI using the [dependencies](/pyproject.toml) in the `pyproject.toml` file. Anomalib CLI is a command line interface for training, inference, benchmarking, and hyperparameter optimization. If you want to use the library as a Python package, you can install the library with the following command:
 
 ```bash
 # Get help for the installation arguments
